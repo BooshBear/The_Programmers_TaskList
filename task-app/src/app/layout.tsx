@@ -16,13 +16,47 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <nav>
+      <body className={inter.className}>
+        {/* User Profile */}
+        <section className='UserProfile'>
+          <div>
+            <h1>User's Name</h1>
+          </div>
+        </section>
+        {/* The horizontel buttons to do stuff like add or go to project's map */}
+        <section className='HorzButtons'>
+          <div>
+            <h1>+ add stuff</h1>
+          </div>
+          <div>
+            <h1>Project's Map</h1>
+          </div>
+        </section>
+        {/* The vertical buttons for the different projects you have. adding search bar and a button to add projects. */}
+        <section className='VertButtons'>
+          <div>
+            <h1>Projects</h1>
+            <p>Search</p>
+          </div>
+          <div>
+            <h1>+ Add Projects</h1>
+          </div>
+          {/* Settings */}
+          <div className='settings'>
+            <h1>Settings</h1>
+          </div>
+        </section>
 
-      </nav>
-      <body className={inter.className}>{children}</body>
-      <footer>
-        
-      </footer>
+        {/* Main */}
+        {children}
+
+        {/* Footer */}
+        <footer>
+          <div>
+            <h1>@My Legal Stuff</h1>
+          </div>
+        </footer>
+      </body>
     </html>
   )
 }

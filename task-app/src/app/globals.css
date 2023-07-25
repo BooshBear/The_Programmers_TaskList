@@ -7,20 +7,68 @@
 html,
 body {
   max-width: 100vw;
+  min-height: 100vh;
   overflow-x: hidden;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  display: grid;
+  grid-template-columns: 10% 90%;
+  grid-template-rows: 4rem auto 2.5rem;
+  grid-template-areas: 
+  "user header"
+  "projects main"
+  "footer footer";
+
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.UserProfile{
+  grid-area: user;
+  background-color: burlywood;
+  align-items: center;
+
+  display: flex;
+  justify-content: center;
+}
+.HorzButtons{
+  grid-area: header;
+  background-color: red;
+  align-items: center;
+
+  display: flex;
+}
+.VertButtons{
+  grid-area: projects;
+  background-color: purple;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.settings {
+  margin-top: auto;
+}
+
+main{
+  grid-area: main;
+  background-color: greenyellow;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+main h1 {
+  text-align: center;
+}
+
+footer {
+  grid-area: footer;
+  background-color: rgb(29, 29, 29);
+  align-items: center;
+
+  display: flex;
+  justify-content: center;
 }
